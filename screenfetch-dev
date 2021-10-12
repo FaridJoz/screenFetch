@@ -1263,6 +1263,7 @@ detectdistro () {
 		qubes) distro="Qubes OS" ;;
 		raspbian) distro="Raspbian" ;;
 		red*hat*|rhel) distro="Red Hat Enterprise Linux" ;;
+                revlinux) distro="RevLinux" ;;
 		rosa) distro="ROSA" ;;
 		red*star|red*star*os) distro="Red Star OS" ;;
 		sabayon) distro="Sabayon" ;;
@@ -4305,6 +4306,23 @@ asciiText () {
 "${c1}          MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   %s"
 "${c1}             \`MMMMMMMMMMMMMMMMMMMMMMMM:    %s"
 "${c1}                 \`\`MMMMMMMMMMMMMMMMM'      %s")
+		;;
+
+                     		"RevLinux")
+			if [[ "$no_color" != "1" ]]; then
+				c1=$(getColor 'light red') # Light Red
+                                c2=$(getColor 'purple') # Purple
+			fi
+			if [ -n "${my_lcolor}" ]; then c1="${my_lcolor}"; c2="${my_lcolor}"; fi
+			startline="0"
+			logowidth="6"
+			fulloutput=(
+"${c1}██████╗${c2}░██╗░░░░░ %s"
+"${c1}██╔══██╗${c2}██║░░░░░ %s"
+"${c1}██████╔╝${c2}██║░░░░░ %s"
+"${c1}██╔══██╗${c2}██║░░░░░ %s"
+"${c1}██║░░██${c2}║███████╗ %s"
+"${c1}╚═╝  ╚═╝${c2}╚══════╝ %s")
 		;;
 
 		"Frugalware")
